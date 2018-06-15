@@ -105,6 +105,15 @@ RUBY
           File.rename before, after
         end
 
+        # add module impl
+        ["PROJECTImpl.h", "PROJECTImpl.m"].each do |file|
+          before = "Pod/Classes/" + file
+          next unless File.exists? before
+
+          after = "Pod/Classes/" + file.gsub("PROJECT", @configurator.pod_name)
+          File.rename before, after
+        end
+
         # rename project related files
         ["PROJECT-Info.plist", "PROJECT-Prefix.pch", "PROJECT.entitlements"].each do |file|
           before = project_folder + "/PROJECT/" + file
@@ -124,7 +133,10 @@ RUBY
     end
 
     def replace_internal_project_settings
-      Dir.glob(project_folder + "/**/**/**/**").each do |name|
+
+      all_dir = Dir.glob(project_folder + "/**/**/**/**") + Dir.glob("Pod/**/**/**/**")
+
+      all_dir.each do |name|
         next if Dir.exists? name
         text = File.read(name)
 

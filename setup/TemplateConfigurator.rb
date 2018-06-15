@@ -68,23 +68,30 @@ module Pod
     end
 
     def run
-      @message_bank.welcome_message
+      puts "\n"
+      puts "   \033[32m ----------欢迎来到涂鸦科技---------Welcome to tuya.--------- \033[0m\n" 
+      puts "\n
+      ████████╗██╗   ██╗██╗   ██╗ █████╗ 
+      ╚══██╔══╝██║   ██║╚██╗ ██╔╝██╔══██╗
+         ██║   ██║   ██║ ╚████╔╝ ███████║
+         ██║   ██║   ██║  ╚██╔╝  ██╔══██║
+         ██║   ╚██████╔╝   ██║   ██║  ██║ 
+         ╚═╝    ╚═════╝    ╚═╝   ╚═╝  ╚═╝ \n" .yellow
 
-      platform = self.ask_with_answers("What platform do you want to use?", ["iOS", "macOS"]).to_sym
+        #  puts "
+        #  ::::::::::: :::    ::: :::   :::   :::     
+        #      :+:     :+:    :+: :+:   :+: :+: :+:   
+        #      +:+     +:+    +:+  +:+ +:+ +:+   +:+  
+        #      +#+     +#+    +:+   +#++: +#++:++#++: 
+        #      +#+     +#+    +#+    +#+  +#+     +#+ 
+        #      #+#     #+#    #+#    #+#  #+#     #+# 
+        #      ###      ########     ###  ###     ###\n" .yellow
 
-      case platform
-        when :macos
-          ConfigureMacOSSwift.perform(configurator: self)
-        when :ios
-          framework = self.ask_with_answers("What language do you want to use?", ["Swift", "ObjC"]).to_sym
-          case framework
-            when :swift
-              ConfigureSwift.perform(configurator: self)
 
-            when :objc
-              ConfigureIOS.perform(configurator: self)
-          end
-      end
+      puts "   \033[32m 1. Now we only support iOS-OC \033[0m\n"  
+
+      ConfigureIOS.perform(configurator: self)
+
 
       replace_variables_in_files
       clean_template_files
