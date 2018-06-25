@@ -22,7 +22,8 @@ module Pod
       puts "   \033[32m 4. And we will not do view based testing \033[0m\n"  
 
 
-      puts 'SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk'.red
+      puts "\n我们默认添加了SDK依赖, 可在Podfile文件中查看\n".red
+      puts "SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk\n".red
 
       prefix = nil
 
