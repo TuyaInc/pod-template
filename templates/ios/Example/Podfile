@@ -3,4 +3,5 @@ source 'https://github.com/TuyaInc/TYPublicSpecs.git'
 
 target '${POD_NAME}_Example' do
   pod '${POD_NAME}', :path => '../'
+  pod "TuyaSmartHomeKit", :git => "https://github.com/TuyaInc/tuyasmart_home_ios_sdk.git"
 end
