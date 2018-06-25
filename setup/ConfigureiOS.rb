@@ -21,6 +21,9 @@ module Pod
 
       puts "   \033[32m 4. And we will not do view based testing \033[0m\n"  
 
+
+      puts 'SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk'.red
+
       prefix = nil
 
       loop do

@@ -3,5 +3,7 @@ source 'https://github.com/TuyaInc/TYPublicSpecs.git'
 
 target '${POD_NAME}_Example' do
   pod '${POD_NAME}', :path => '../'
+
+  #SDK 文档请查看:https://github.com/TuyaInc/tuyasmart_home_ios_sdk
   pod "TuyaSmartHomeKit", :git => "https://github.com/TuyaInc/tuyasmart_home_ios_sdk.git"
 end
