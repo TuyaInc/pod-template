@@ -13,17 +13,17 @@ module Pod
 
     def perform
         
-      puts "   \033[32m 2. Now we create the demo application \033[0m\n"  
+      # puts "   \033[32m 2. Now we create the demo application \033[0m\n"
 
       keep_demo =:yes
-      puts "   \033[32m 3. And we will not use testing frameworks \033[0m\n"  
+      # puts "   \033[32m 3. And we will not use testing frameworks \033[0m\n"
       configurator.set_test_framework("xctest", "m", "ios")
 
-      puts "   \033[32m 4. And we will not do view based testing \033[0m\n"  
+      # puts "   \033[32m 4. And we will not do view based testing \033[0m\n"
 
 
-      puts "\n我们默认添加了SDK依赖, 可在Podfile文件中查看\n".red
-      puts "SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk\n".red
+      # puts "\n我们默认添加了SDK依赖, 可在Podfile文件中查看\n".red
+      # puts "SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk\n".red
 
       prefix = nil
 
@@ -50,11 +50,6 @@ module Pod
       # There has to be a single file in the Classes dir
       # or a framework won't be created, which is now default
       `touch Pod/Classes/ReplaceMe.m`
-
-      # puts "----->>>>>>"
-      # puts configurator.pod_name
-      # `git add Example/#{pod_name}.xcodeproj/project.pbxproj`
-      # puts "----->>>>>>"
 
       # `touch Pod/Classes/`
 
