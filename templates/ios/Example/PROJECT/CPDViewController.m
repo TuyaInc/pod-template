@@ -19,6 +19,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    UILabel* label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    
+    label.text = @"Hi, welcome to Tuya";
+    label.font = [UIFont fontWithName:@"Arial" size:16];
+    label.textColor = [UIColor blackColor];
+    [label sizeToFit];
+    label.center = CGPointMake(self.view.frame.size.width/2, 200);
+    
+    [self.view addSubview:label];
 
 }
 

@@ -12,6 +12,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UITabBarController *tb=[[UITabBarController alloc]init];
+    self.window.rootViewController=tb;
+    
+    
+    Class cls = NSClassFromString(@"CPDViewController");
+    
+    UIViewController *vc1 = (UIViewController *)[cls new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc1];
+    nav.tabBarItem.title=@"test";
+    
+    UIViewController *vc2=[[UIViewController alloc]init];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nav2.tabBarItem.title=@"test2";
+    
+    tb.viewControllers=@[nav,nav2];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
