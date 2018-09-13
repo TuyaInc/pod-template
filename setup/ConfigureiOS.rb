@@ -25,19 +25,19 @@ module Pod
       # puts "\n我们默认添加了SDK依赖, 可在Podfile文件中查看\n".red
       # puts "SDK文档及使用请参考:https://github.com/TuyaInc/tuyasmart_home_ios_sdk\n".red
 
-      prefix = nil
+      prefix = 'PR'
 
-      loop do
-        prefix = configurator.ask("What is your class prefix(We can not use *TY* for the moment).")
-
-        if prefix.include?(' ')
-          puts 'Your class prefix cannot contain spaces.'.red
-        elsif prefix.include?('TY')
-          puts 'Sorry, Your class prefix cannot be *TY*.'.red
-        else
-          break
-        end
-      end
+      # loop do
+      #   prefix = configurator.ask("What is your class prefix(We can not use *TY* for the moment).")
+      #
+      #   if prefix.include?(' ')
+      #     puts 'Your class prefix cannot contain spaces.'.red
+      #   elsif prefix.include?('TY')
+      #     puts 'Sorry, Your class prefix cannot be *TY*.'.red
+      #   else
+      #     break
+      #   end
+      # end
 
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
