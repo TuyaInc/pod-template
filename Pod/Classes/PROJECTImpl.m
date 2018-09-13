@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HiSmartFMWKImpl.h"
+#import "PROJECTImpl.h"
 #import "TYModulPublic.h"
 
 @interface PROJECTImpl()<TYModuleProtocol>
