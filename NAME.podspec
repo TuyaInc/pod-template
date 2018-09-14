@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = '${POD_NAME}/Classes/**/*'
-  s.resources = ['${POD_NAME}/Assets/*.{png,xib,plist,xcassets,bundle}']
+  #s.resources = ['${POD_NAME}/Assets/*.{png,xib,plist,xcassets,bundle}']
 
   s.frameworks = 'UIKit', 'Foundation'
 
